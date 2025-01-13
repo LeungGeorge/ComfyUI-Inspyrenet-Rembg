@@ -32,7 +32,7 @@ class InspyrenetRembg:
 
     def remove_background(self, image, torchscript_jit):
         if (torchscript_jit == "default"):
-            remover = Remover()
+            remover = Remover(ckpt='models/background/latest.pth')
         else:
             remover = Remover(jit=True)
         img_list = []
